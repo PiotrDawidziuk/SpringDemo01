@@ -1,5 +1,7 @@
 package pl.piotrdawidziuk;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,10 +30,16 @@ public class ParamDemoController {
 //		return "ID: " + idParam;
 //	}
 	
+//	@GetMapping("/api/foos")
+//	@ResponseBody
+//	public String getFoos(@RequestParam(defaultValue = "test") String id) {
+//	    return "ID: " + id;
+//	}
+	
 	@GetMapping("/api/foos")
 	@ResponseBody
-	public String getFoos(@RequestParam(defaultValue = "test") String id) {
-	    return "ID: " + id;
+	public String getFoos(@RequestParam List<String> id) {
+	    return "IDs are " + id;
 	}
 	
 
