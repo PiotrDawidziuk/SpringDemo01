@@ -16,16 +16,23 @@ public class ParamDemoController {
 //	    return "ID: " + id;
 //	}
 	
+//	@GetMapping("/api/foos")
+//	@ResponseBody
+//	public String getFoos(@RequestParam(required = false) String id) { 
+//	    
+//		String idParam = id;
+//		if(idParam == null) {
+//			idParam = "Cannot find Id";
+//		}
+//		
+//		return "ID: " + idParam;
+//	}
+	
 	@GetMapping("/api/foos")
 	@ResponseBody
-	public String getFoos(@RequestParam(required = false) String id) { 
-	    
-		String idParam = id;
-		if(idParam == null) {
-			idParam = "Cannot find Id";
-		}
-		
-		return "ID: " + idParam;
+	public String getFoos(@RequestParam(defaultValue = "test") String id) {
+	    return "ID: " + id;
 	}
+	
 
 }
